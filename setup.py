@@ -1,4 +1,3 @@
-import pathlib
 from setuptools import find_packages, setup
 import os
 
@@ -9,14 +8,12 @@ with open(os.path.join(file_dir, 'README.md')) as f:
 
 requirements = [
     'setuptools>=41.0.0',  # tensorboard requirements
-    'fire',
-    'configparser',
-    'importlib'
+    'fire>=0.2.1'
     ]
 
 setup(
-    name="demopypackage1",  # package name for PyPI
-    version="1.0.0",
+    name="demopypackage1e",  # package name purely for PyPI
+    version="1.0.1",
     description="Demo for creating a Python package",
     long_description=long_description0,
     long_description_content_type="text/markdown",
@@ -26,7 +23,7 @@ setup(
     license="Apache License 2.0",
     python_requires='>3.6, <4',
     classifiers=[
-        "OSI Approved :: Apache Software License",
+	"License :: OSI Approved :: Apache Software License",
 	# see; https://autopilot-docs.readthedocs.io/en/latest/license_list.html
 	'Programming Language :: Python :: 3.7',
         'Topic :: Scientific/Engineering',
