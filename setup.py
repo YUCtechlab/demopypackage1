@@ -12,8 +12,8 @@ requirements = [
     ]
 
 setup(
-    name="demopypackage1e",  # package name purely for PyPI
-    version="1.0.1",
+    name="demopypackage1f",  # package name purely for PyPI
+    version="1.0.2",
     description="Demo for creating a Python package",
     long_description=long_description0,
     long_description_content_type="text/markdown",

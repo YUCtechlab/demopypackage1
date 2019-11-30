@@ -9,12 +9,14 @@ The package includes a (dead) simple program, not a library, and that is on purp
 # How to install this package
 This package is not available on PyPI, instead it is available simply for education purposes here on test.pypi.org.
 
-To install the package:
+To install the package on your host:
 First, create a virtual environment for Python:
 e.g. via Anaconda or pip.
 Then:
 
 `pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple demopypackage1d`
+
+A further option is to try this package out together with Docker: e.g. create a new Docker image using Dockerfile. For this, use CMD in the Dockerfile to install the package with pip.
 
 # How to run the program
 In a terminal window with the newly created virtual environment:  
@@ -35,7 +37,7 @@ Here a summary of the steps to create such a package.
 4. Next we clone the nearly empty repo into a local project folder *lpf*. This creates a local folder *lpf/demopypackage1*.
 5. Next we create a folder structure within *lpf/demopypackage1* as is available on GitHub (see homepage). To stay on top of the structure and its content, displaying the structure with `$ tree` in a terminal window is helpful.
 6. Now time to name the package purely for how it shall show up on PyPI. The name is used for pip install.
-This name must be unique on PiPY. We have chosen: demopypackage1x with x = e. For previous versions, we used x = a, b, ...
+This name must be unique on PiPY. We have chosen: demopypackage1x with x = f. For previous versions, we used x = a, b, ...
 7. Of course, as the modules in the package should perform some work, we need to create some code. For the purpose here, the code is kept very very simple.
 See the project homepage on GitHub.
 Our repo name (locally within the *lpf*) is: *demopypackage1*.
@@ -46,23 +48,23 @@ To make things a bit more interesting, we include:
 	- a package tests that is not to be imported.  
 The main package and its subpackage are to be imported.
 The main script is called \__main\__.py.
-8. Now we create a file requirements.txt. This can be used by other developers who would fork your package and would like to install the exact package versions you used for development of your package software.   
+8. In the local repository *lpf/demopypackage1*, we now create a folder *requirements* and in there a file requirements.txt. This can be used by other developers who would fork your package and would like to install the exact package versions you used for development of your package software.   
 From the Python environment:  
 `$ pip freeze > requirements.txt`
 9. We set the version in the \__init\__.py and setup.py files:  	
-`__version__ = "1.0.0"` or any other version.
+`__version__ = "1.0.2"` or any other version.
 10. Next we create the (rather important) setup.py file (see this project's homepage on GitHub for details).
 11. Now time to create the README.md markdown file, i.e. this text. This can be elegantly done using Atom.
-12. To define which other non-Python files we want to include into the package, we write a manifest file: MANIFEST.in.
+12. To define which other non-Python files we want to include into the package, we write a manifest file: MANIFEST.in. 'MANIFEST' must be written in capital letters.
 13. Commit the code to the local git repo master and push to GitHub.
-14. Install twine with    
+14. Install twine (if not already available) with    
 `$ pip install twine`
 15. Create a source code archive and a wheel for the package from the folder that holds setup.py:  
 Cd into the folder that holds setup.py: demopypackage1.   
 `$ python setup.py sdist bdist_wheel`
-16. Check whether the package has been correctly created from folder dist:  
+16. Check whether the package has been correctly created from folder dist. For tar, pick the latest file with the correct version number:  
 `$ cd dist`    
-`$ tar tzf demopypackage1d-1.0.1.tar.gz`    
+`$ tar tzf demopypackage1f-1.0.2.tar.gz`    
 Check whether all files are included, including e.g. important non-Python files like config.txt.
 17. Run a check with twine:     
 `$ cd ..`    
@@ -76,11 +78,11 @@ cd to the folder that includes the dist folder:
 
 
 ## How to test installation of the package
-1. Create a test Python environment using e.g. Anaconda, conda or pip.
+1. Create a new test Python environment using e.g. Anaconda, conda or pip.
 2. Start a new terminal window.
 3. Activate the test environment
 4. Install the package from the test.pypi.org site:   
-`$ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple demopypackage1d`
+`$ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple demopypackage1f`
 
     > Above is important as in the case of this demopypackage1, some packages need to be installed from PyPI itself.
 
@@ -111,4 +113,4 @@ https://packaging.python.org/tutorials/packaging-projects/
 ***
 [Link to the project's GitHub page](https://github.com/YUCtechlab/demopypackage1)
 
-Created: 2019 Nov 15
+Created: 2019 Nov 30
